@@ -1,7 +1,6 @@
 import Link from "next/link";
 import type { Route } from "next";
 import type { ComponentProps } from "react";
-import { Send } from "lucide-react";
 
 type ButtonProps = ComponentProps<"button"> & {
   variant?: "primary" | "secondary" | "ghost";
@@ -94,8 +93,8 @@ export function Shell({ children }: { children: React.ReactNode }) {
           className="flex items-center gap-2 text-sm font-black md:absolute md:left-1/2 md:-translate-x-1/2"
           aria-label="Portray home"
         >
-          <span className="grid h-6 w-6 place-items-center rounded-full bg-ink text-white" aria-hidden>
-            <Send size={13} fill="currentColor" />
+          <span className="grid h-6 w-6 place-items-center rounded-full bg-ink font-serif text-[15px] font-black leading-none text-white" aria-hidden>
+            P
           </span>
           <span>Portray</span>
         </Link>
