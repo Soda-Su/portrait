@@ -106,7 +106,7 @@ export function Shell({ children }: { children: React.ReactNode }) {
             Log in
           </Link>
           <LinkButton href="/create" variant="secondary" className="!hidden min-h-9 px-3 sm:!inline-flex">
-            Create Passport
+            Build Career OS
           </LinkButton>
         </nav>
       </header>

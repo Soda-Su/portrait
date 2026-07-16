@@ -65,7 +65,7 @@ export function IntakeForm() {
         body: JSON.stringify(form),
       });
       const data = await response.json();
-      if (!response.ok) throw new Error(data.error || "Could not create passport");
+      if (!response.ok) throw new Error(data.error || "Could not build Career OS");
       if (data.authRequired) {
         router.push(`/check-email?email=${encodeURIComponent(form.email)}` as Route);
       } else {
@@ -82,19 +82,22 @@ export function IntakeForm() {
     <form className="paper-surface min-w-0 max-w-[calc(100vw-2.5rem)] rounded-[32px] p-5 md:max-w-none md:p-7" onSubmit={submit}>
       <div className="mb-7 border-b border-line pb-6">
         <p className="font-mono text-xs uppercase tracking-[0.16em] text-muted-foreground">
-          Profile Builder
+          Career OS Builder
+        </p>
+        <p className="mt-3 max-w-2xl font-serif text-2xl font-semibold leading-8 text-ink">
+          Give Portray the source material. The agent assembles the signal.
         </p>
         <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
-          Give Portray one career source and one proof of work. The agent will extract
-          signal, draft the Passport, and keep unsupported claims visible.
+          Add one career source and one proof of work. Portray extracts evidence,
+          drafts the Career OS, and keeps unsupported claims visible.
         </p>
       </div>
 
       <div className="mb-7 grid gap-3 border-b border-line pb-7 md:grid-cols-3">
         {[
-          ["1", "Read profile source", "Resume text, resume link, or LinkedIn"],
+          ["1", "Read career source", "Resume text, resume link, or LinkedIn"],
           ["2", "Inspect one proof", "A public link or a concrete description"],
-          ["3", "Draft Passport", "Evidence-backed sections for review"],
+          ["3", "Assemble Career OS", "Evidence-backed layers for review"],
         ].map(([step, title, body]) => (
           <div className="min-w-0 rounded-2xl bg-muted px-4 py-3" key={step}>
             <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
@@ -124,7 +127,7 @@ export function IntakeForm() {
         </Field>
         <div className="md:col-span-2">
           <div className="mb-3 flex items-center gap-2 border-t border-line pt-6 text-sm font-semibold text-ink">
-            <Sparkles size={15} /> Profile source
+            <Sparkles size={15} /> Career source
           </div>
           <div className="grid gap-5 md:grid-cols-2">
             <Field label="LinkedIn URL" hint="Use this when your public profile is the best career source.">
@@ -181,14 +184,14 @@ export function IntakeForm() {
         <input className="hidden" tabIndex={-1} autoComplete="off" value={form.website} onChange={(event) => updateField("website", event.target.value)} aria-hidden />
         <label className="flex items-start gap-3 border-t border-line pt-5 text-sm leading-6 text-ink md:col-span-2">
           <input className="mt-1" type="checkbox" checked={form.materialConsent} onChange={(event) => updateField("materialConsent", event.target.checked)} required />
-          <span>I authorize Portray to read this public work and use the submitted material to generate and answer questions about my private Talent Passport.</span>
+          <span>I authorize Portray to read this public work and use the submitted material to generate and answer questions about my private Career OS.</span>
         </label>
       </div>
 
       {error ? <p className="mt-5 text-sm text-red-700">{error}</p> : null}
       <div className="mt-8 flex items-center justify-end border-t border-line pt-5">
         <Button type="submit" disabled={submitting}>
-          {submitting ? "Reading your work..." : "Create my passport"} <Send size={16} />
+          {submitting ? "Reading your work..." : "Build Career OS"} <Send size={16} />
         </Button>
       </div>
     </form>

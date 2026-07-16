@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portray - Agentic AI Talent Passport",
+  title: "Portray - Agentic Career OS",
   description:
-    "Turn existing career materials into a proof-based AI Talent Passport for AI-native roles.",
+    "Turn existing career materials into a proof-based operating system for AI-native work.",
 };
 
 export default function RootLayout({

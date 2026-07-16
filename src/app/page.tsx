@@ -12,26 +12,26 @@ import type { Route } from "next";
 import { LinkButton, Shell } from "@/components/ui";
 
 const passportSections = [
-  ["Identity Header", "Who you are now and the AI-native role you are moving toward."],
-  ["What I'm Becoming", "A clear transition narrative based on the evidence you provide."],
-  ["Work as Proof", "Representative work reframed as capability signal."],
-  ["Talent Signals", "Specific strengths with current evidence, never a total score."],
-  ["How I Think", "Point-of-view sections that sound like a person, not a template."],
-  ["Letter to Founders", "A founder-facing intro you can reuse in real conversations."],
-  ["Missing Proof", "The next proof-of-work that would make your signal stronger."],
+  ["Identity layer", "Who you are now, where you are moving, and the role language that makes the transition legible."],
+  ["Becoming narrative", "A career transition story assembled from evidence, not aspiration."],
+  ["Proof graph", "Representative work converted into capability signal recruiters and founders can inspect."],
+  ["Signal map", "Specific strengths with current evidence, never a synthetic total score."],
+  ["Operating principles", "Point-of-view sections that show how you think, decide, and collaborate with AI."],
+  ["Founder intro", "A concise outreach layer you can reuse when the conversation gets real."],
+  ["Next proof", "The next proof-of-work that would make the system stronger."],
 ];
 
 const buildSteps = [
-  ["LinkedIn or resume", "Start with the career source you already have."],
-  ["Context questions", "Answer the few prompts that reveal direction, taste, and proof."],
-  ["Passport draft", "Get a complete profile you can edit, copy, share, and test."],
+  ["Career source", "Start with the resume, LinkedIn, or work material you already have."],
+  ["Signal calibration", "Answer the prompts that reveal direction, taste, proof, and where you are headed next."],
+  ["Career OS draft", "Get a working system you can edit, export, share, and let others query."],
 ];
 
 const productPromises = [
-  ["Editable sections", PencilLine, "Refine the generated narrative before you use it."],
-  ["Markdown export", FileText, "Copy or download a clean version for docs and intros."],
-  ["Private sharing", Link2, "Create a revocable link when you are ready to show it."],
-  ["Ask My Passport", MessageSquareText, "Let visitors ask evidence-bound questions."],
+  ["Editable OS layers", PencilLine, "Tune each generated section before it becomes part of your public signal."],
+  ["Portable manuscript", FileText, "Copy or download a clean Markdown version for docs, intros, and applications."],
+  ["Private signal link", Link2, "Create a revocable link when you are ready to let someone inspect the system."],
+  ["Ask My Passport", MessageSquareText, "Let visitors ask evidence-bound questions without inventing claims."],
 ];
 
 function LineStack({ dark = false }: { dark?: boolean }) {
@@ -60,7 +60,7 @@ function CompactProfile({ dark = false }: { dark?: boolean }) {
         </div>
       </div>
       <div className="grid gap-3">
-        {["Becoming", "Proof", "Signals", "Thinking", "Next step"].map((label) => (
+        {["Direction", "Proof", "Signals", "Principles", "Next move"].map((label) => (
           <div className="grid grid-cols-[62px_1fr] gap-3" key={label}>
             <p className={dark ? "text-white/55" : "text-muted-foreground"}>{label}</p>
             <LineStack dark={dark} />
@@ -80,7 +80,7 @@ function PassportSheet() {
     <div className="grid h-full overflow-hidden rounded-xl bg-white p-6 text-left text-[10px] text-ink md:p-8">
       <div className="mb-4">
         <p className="font-serif text-lg font-bold leading-tight md:text-2xl">
-          I design human-AI workflows and make product judgment visible.
+          I turn product judgment into human-AI workflows teams can trust.
         </p>
         <div className="mt-4 flex items-center gap-2">
           <span className="h-6 w-6 rounded-full bg-[linear-gradient(135deg,#c9823c,#40281e)]" />
@@ -93,18 +93,18 @@ function PassportSheet() {
       <div className="grid grid-cols-[72px_1fr] gap-5 border-t border-line pt-4">
         <p className="font-semibold text-muted-foreground">Proof</p>
         <p className="leading-5 text-ink/70">
-          Reframed an onboarding case study into evidence for AI product design:
+          Reframed an onboarding case study into evidence for agentic product design:
           expectation-setting, feedback loops, and trust recovery.
         </p>
       </div>
       <div className="mt-5 grid grid-cols-[72px_1fr] gap-5">
         <p className="font-semibold text-muted-foreground">Signals</p>
         <div className="grid gap-2">
-          {["Product framing", "Human-AI interaction", "Founder communication"].map(
+          {["Product framing", "Human-AI systems", "Founder communication"].map(
             (item) => (
               <div className="grid grid-cols-[1fr_auto] border-b border-line pb-2" key={item}>
                 <span>{item}</span>
-                <span className="text-muted-foreground">Emerging</span>
+                <span className="text-muted-foreground">Active</span>
               </div>
             ),
           )}
@@ -113,7 +113,7 @@ function PassportSheet() {
       <div className="mt-5 grid grid-cols-[72px_1fr] gap-5">
         <p className="font-semibold text-muted-foreground">Next</p>
         <p className="leading-5 text-ink/70">
-          Build a small interactive demo that proves the workflow can ship.
+          Ship a small demo that proves the workflow can operate in the wild.
         </p>
       </div>
     </div>
@@ -144,28 +144,28 @@ export default function Home() {
       <section className="mx-auto max-w-6xl overflow-hidden px-5 pb-16 pt-24 text-center md:overflow-visible md:pt-28">
         <p className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-line bg-white px-4 py-2 text-xs font-semibold text-muted-foreground shadow-[0_8px_22px_rgba(0,0,0,0.04)]">
           <Sparkles size={14} className="text-path-green" />
-          LinkedIn or resume + context questions
+          Welcome to the age of agentic careers
         </p>
         <h1 className="path-title mx-auto max-w-[280px] font-serif text-[34px] font-black leading-[0.94] text-ink sm:max-w-4xl sm:text-6xl md:text-7xl">
-          Generate the Passport
+          Portray is your
           <br />
-          your future role can read
+          Agentic Career OS
         </h1>
         <p className="mx-auto mt-7 max-w-[260px] break-words text-base font-medium leading-7 text-muted-foreground sm:max-w-2xl md:text-2xl md:leading-9">
-          Portray turns your LinkedIn or resume plus a few signal questions into an
-          evidence-backed AI Talent Passport you can edit, copy, share, and test.
+          You provide the proof. Portray turns scattered career material into an
+          evidence-backed operating system for narrative, signal, sharing, and questions.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
           <LinkButton href="/create" variant="secondary">
-            Create my Passport <ArrowRight size={13} />
+            Build my Career OS <ArrowRight size={13} />
           </LinkButton>
           {demoPassportUrl ? (
             <LinkButton href={demoPassportUrl as Route} variant="ghost">
-              Chat with a sample Passport
+              Ask a sample Passport
             </LinkButton>
           ) : (
             <LinkButton href="/#preview" variant="ghost">
-              View example
+              See the Passport layer
             </LinkButton>
           )}
         </div>
@@ -175,7 +175,7 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-5 pb-28 text-center" id="preview">
         <h2 className="path-title mx-auto max-w-[280px] font-serif text-[30px] font-black leading-[0.98] text-ink sm:max-w-xl sm:text-4xl md:text-5xl">
-          One flow, from source material to usable profile
+          From source material to a working career system
         </h2>
         <div className="mx-auto mt-12 grid max-w-5xl gap-5 text-left md:grid-cols-3">
           {buildSteps.map(([title, body], index) => (
@@ -196,14 +196,14 @@ export default function Home() {
         <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[0.78fr_1.22fr] md:items-start">
           <div className="min-w-0">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-white/62">
-              Passport structure
+              Operating structure
             </p>
             <h2 className="path-title mt-5 max-w-[280px] font-serif text-[30px] font-black leading-[0.98] md:max-w-md md:text-5xl">
-              Built around the sections that matter
+              An OS needs structure, not another profile
             </h2>
             <p className="mt-5 max-w-[270px] break-words text-sm leading-6 text-white/72 md:max-w-sm">
-              Every generated section has one job: make existing work legible as
-              future-facing proof without overstating what has not been shown.
+              Every layer has one job: make your existing work legible as future-facing
+              proof while keeping unsupported claims out of the system.
             </p>
           </div>
           <div className="grid gap-3">
@@ -226,14 +226,14 @@ export default function Home() {
         <div className="grid gap-12 md:grid-cols-[0.95fr_1.05fr] md:items-center">
           <div className="min-w-0">
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              After generation
+              After the draft
             </p>
             <h2 className="path-title mt-5 max-w-[280px] font-serif text-[30px] font-black leading-[0.98] text-ink md:max-w-lg md:text-5xl">
-              Complete enough to use, restrained enough to trust
+              Operate your signal after generation
             </h2>
             <p className="mt-5 max-w-[270px] break-words text-sm leading-6 text-muted-foreground md:max-w-md">
-              The first version focuses on the real workflow: review the draft,
-              improve the wording, export it, share it privately, and collect feedback.
+              The first version focuses on the real workflow: review the draft, sharpen
+              the language, export the manuscript, share it privately, and collect feedback.
             </p>
             <div className="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap">
               <LinkButton href="/create" variant="secondary">
@@ -269,14 +269,14 @@ export default function Home() {
 
       <section className="px-5 pb-24 text-center" id="pricing">
         <h2 className="path-title mx-auto max-w-[290px] font-serif text-[34px] font-black leading-[0.98] text-ink sm:max-w-2xl md:text-6xl">
-          Test the Passport before we add anything else
+          Start with proof. Let the OS assemble.
         </h2>
         <p className="mx-auto mt-5 max-w-[270px] break-words text-sm leading-6 text-muted-foreground sm:max-w-md">
-          Start with your existing material. The beta is designed to learn whether
-          the generated Passport feels accurate, useful, and worth sharing.
+          The beta is designed to learn whether your generated Career OS feels accurate,
+          useful, and worth sharing before we add more automation.
         </p>
         <div className="mx-auto mt-8 grid max-w-lg gap-3 text-left text-sm text-muted-foreground sm:grid-cols-3">
-          {["Generate", "Edit", "Share"].map((item) => (
+          {["Assemble", "Edit", "Share"].map((item) => (
             <div className="flex items-center gap-2 border-t border-line pt-4" key={item}>
               <CheckCircle2 size={16} className="shrink-0 text-path-green" />
               <span>{item}</span>
@@ -285,10 +285,10 @@ export default function Home() {
         </div>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row sm:flex-wrap">
           <LinkButton href="/create" variant="secondary">
-            Create my Passport <ArrowRight size={13} />
+            Build my Career OS <ArrowRight size={13} />
           </LinkButton>
           <LinkButton href="/#preview" variant="ghost">
-            Review the flow
+            Review the system
           </LinkButton>
         </div>
       </section>
@@ -299,10 +299,10 @@ export default function Home() {
             <p className="font-serif text-3xl font-black leading-none">
               Portray
               <br />
-              AI Talent Passport
+              Agentic Career OS
             </p>
             <p className="mt-5 max-w-sm text-sm leading-6 text-white/68">
-              A proof-based career manuscript for people moving toward AI-native roles.
+              A proof-based career system for people moving toward AI-native work.
             </p>
           </div>
           <div className="flex items-start md:justify-end">
